@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 public class MasterMindDTO {
 
     @NotNull(message = "Can not be empty")
-    @Size(min = 2, max = 5, message = "not in range")
+    @Size(min = 4, max = 4, message = "Should contain 4 guesses")
     private String chellange;
 
     public String getChellange() {

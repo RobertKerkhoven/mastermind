@@ -60,7 +60,7 @@ public class CombinationsControllerTest {
 
         when(mathService.getShuffledCombinations("4455")).thenReturn(output);
 
-        mvc.perform(MockMvcRequestBuilders.post("/math/getcombinations")
+        mvc.perform(MockMvcRequestBuilders.post("/mastermind/getcombinations")
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .content(jsonContentA.write(input).getJson()))
@@ -88,7 +88,7 @@ public class CombinationsControllerTest {
 
         when(mathService.getShuffledCombinations("4455555")).thenReturn(output);
 
-        mvc.perform(MockMvcRequestBuilders.post("/math/getcombinations")
+        mvc.perform(MockMvcRequestBuilders.post("/mastermind/getcombinations")
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .content(jsonContentA.write(input).getJson()))
@@ -113,7 +113,7 @@ public class CombinationsControllerTest {
         ArrayList<String> output = new ArrayList<>();
         output.add("22");output.add("33");
 
-        mvc.perform(MockMvcRequestBuilders.post("/math/getcombinations")
+        mvc.perform(MockMvcRequestBuilders.post("/mastermind/getcombinations")
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .content(jsonContentA.write(input).getJson()))

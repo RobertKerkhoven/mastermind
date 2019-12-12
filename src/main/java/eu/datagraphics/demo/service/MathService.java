@@ -8,4 +8,5 @@ import java.util.List;
 public interface MathService {
 
     List<String> getShuffledCombinations(String initial);
+    Integer getGuessScore(String guess);
 }
