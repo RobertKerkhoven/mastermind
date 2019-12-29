@@ -79,7 +79,7 @@ public class CombinationsControllerTest {
 
         ArrayList<Violation> violations = new ArrayList<>();
 
-        violations.add(new Violation("chellange","not in range"));
+        violations.add(new Violation("chellange","Should contain 4 guesses"));
         HashMap s = new HashMap();
         s.put("violations", violations);
 
