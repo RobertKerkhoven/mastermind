@@ -3,6 +3,7 @@ package eu.datagraphics.demo.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import eu.datagraphics.demo.controller.advice.Violation;
 import eu.datagraphics.demo.dto.MasterMindDTO;
+import eu.datagraphics.demo.service.MasterMindService;
 import eu.datagraphics.demo.service.MathService;
 
 import org.junit.Before;
@@ -36,6 +37,9 @@ public class CombinationsControllerTest {
 
     @MockBean
     private MathService mathService;
+
+    @MockBean
+    private MasterMindService masterMindService;
 
     @Value("${pinholes}")
     Integer amountPinholes;
@@ -86,7 +90,7 @@ public class CombinationsControllerTest {
         ArrayList<String> output = new ArrayList<>();
         output.add("22");output.add("33");
 
-        when(mathService.getShuffledCombinations("4455555")).thenReturn(output);
+        when(mathService.getShuffledCombinations("4455")).thenReturn(output);
 
         mvc.perform(MockMvcRequestBuilders.post("/mastermind/getcombinations")
                 .contentType(MediaType.APPLICATION_JSON)

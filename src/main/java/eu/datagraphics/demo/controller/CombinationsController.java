@@ -1,6 +1,7 @@
 package eu.datagraphics.demo.controller;
 
 import eu.datagraphics.demo.dto.MasterMindDTO;
+import eu.datagraphics.demo.service.MasterMindService;
 import eu.datagraphics.demo.service.MathService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,11 @@ public class CombinationsController {
     @Autowired
     private MathService mathService;
 
+    @Autowired
+    private MasterMindService masterMindService;
+
+
+
     @PostMapping(value="/getcombinations", consumes = "application/json", produces = "application/json")
     ResponseEntity<Object> postCombinations(@Valid @RequestBody MasterMindDTO masterMind) {
 
@@ -23,6 +29,7 @@ public class CombinationsController {
 
     @PostMapping(value="/guess", consumes = "application/json", produces = "application/json")
     ResponseEntity<Integer> postGuess(@Valid @RequestBody MasterMindDTO masterMind) {
+        masterMindService.saveGuess(masterMind.getChellange());
 
         return ResponseEntity.ok(mathService.getGuessScore(masterMind.getChellange()));
     }
