@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name="GUESS")
-@Getter @Setter @NoArgsConstructor
+@Data
 public class Guess implements Serializable {
 
     @Id
@@ -19,12 +19,4 @@ public class Guess implements Serializable {
     @Column(name="chellange")
     private String chellange;
 
-
-//    public String getChellange() {
-//        return chellange;
-//    }
-//
-//    public void setChellange(String chellange) {
-//        this.chellange = chellange;
-//    }
 }

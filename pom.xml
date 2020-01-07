@@ -16,7 +16,6 @@
 
     <properties>
         <java.version>11</java.version>
-        <junit.jupiter.version>5.5.2</junit.jupiter.version>
         <start-class>eu.datagraphics.demo.DemoApplication</start-class>
     </properties>
 
