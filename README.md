@@ -34,15 +34,23 @@ Ways to containerize the application(s):
     FOO should be replaced with the username:password for the docker registry.
     echo -n 'username:password' | base64
     
-    mvn dockerfile:build
-    docker run --rm datagraphics/demo:0.0.1-SNAPSHOT
-    mvn dockerfile:push
-    or push with authentication via maven ($MAVEN_HOME/settings.xml)
-    
-    
+    - mvn clean install
+    - mvn dockerfile:build
+    - docker run --rm datagraphics/demo:0.0.1-SNAPSHOT
+    - mvn dockerfile:push
 
+    Or push with authentication via maven ($MAVEN_HOME/settings.xml):
+    
+    mvn dockerfile:push -Ddockerfile.useMavenSettingsForAuth=true   (or enabled via pom configuration)
+    
+    $MAVEN_HOME/settings.xml
+    ```
+    <server>
+       <id>docker.io</id>
+       <username>FOO</username>
+       <password>BAR</password>
+     </server>
+    
 2.  Fabric8 plugin 
 
 3.  Google Cloud Platform (Jib)
-
-In order to allow 
