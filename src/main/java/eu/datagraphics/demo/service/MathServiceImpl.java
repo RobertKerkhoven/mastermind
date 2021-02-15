@@ -13,6 +13,8 @@ public class MathServiceImpl implements MathService {
     @Override
     public List<String> getShuffledCombinations(String initial) {
 
+        //TODO: implement shuffle algo.
+
         List<String> combinations = new ArrayList<>();
         combinations.add("123");
         return combinations;
@@ -21,6 +23,8 @@ public class MathServiceImpl implements MathService {
     @Override
     public Integer getGuessScore(String guess) {
         int score = 0;
+
+        //TODO: implement score algo.
 
         for (int i=0;i<4;i++){
             if (guess.charAt(i) == rgbw.charAt(i)){

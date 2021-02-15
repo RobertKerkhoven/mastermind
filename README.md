@@ -3,6 +3,12 @@ https://www.baeldung.com/spring-boot-run-maven-vs-executable-jar
 RUN application in exploded form:
 mvn spring-boot:run
 
+Example:
+curl localhost:8585/mastermind/guess/RGBW
+Geeft een score van 4
+curl localhost:8585/mastermind/guess/RGWW
+Geeft een score van 3
+
 **prod-env**
 
 BUILD and RUN application,
