@@ -6,6 +6,7 @@ mvn spring-boot:run
 Example:
 curl localhost:8585/mastermind/guess/RGBW
 Geeft een score van 4
+
 curl localhost:8585/mastermind/guess/RGWW
 Geeft een score van 3
 
